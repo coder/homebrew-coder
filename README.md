@@ -1,4 +1,4 @@
-# Homebrew Coder Tap
+# Coder Homebrew Tap
 
 A Homebrew Tap for Coder related utilities and applications.
 
