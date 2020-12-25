@@ -1,0 +1,11 @@
+name: test
+on: [push]
+
+jobs:
+  coder_cli:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: brew install --build-from-source ./coder.rb 
+      - run: coder --version
+
