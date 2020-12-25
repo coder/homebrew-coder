@@ -5,7 +5,7 @@ class Coder < Formula
   version "v1.14.2"
   sha256 "69b69497a75ce19851681974aa7561af7c7061357f8616e24446e58795bf6e1f"
   bottle :unneeded
-  def instal
+  def install
     bin.install "coder"
   end
   test do
