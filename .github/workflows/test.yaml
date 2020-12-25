@@ -6,7 +6,6 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
-      - run: brew update
       - run: brew install --build-from-source ./coder.rb 
       - run: coder --version
 
