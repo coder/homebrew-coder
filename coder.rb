@@ -3,7 +3,7 @@ class Coder < Formula
   homepage "https://github.com/cdr/coder-cli"
   url "https://github.com/cdr/coder-cli/releases/download/v1.14.2/coder-cli-darwin-amd64.zip"
   version "v1.14.2"
-  sha256 "69b69497a75ce19851681974aa7561af7c7061357f8616e24446e58795bf6e1f"
+  sha256 "ddf256cfa77bc19775e9490d088ba1c74bd8197f08c51dfdf79c5f7c3f49fdf6  /Users/charlie/coder/coder-cli/ci/bin/coder-cli-linux-amd64.tar.gz"
   bottle :unneeded
   def install
     bin.install "coder"
