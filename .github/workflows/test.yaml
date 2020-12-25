@@ -3,7 +3,10 @@ on: [push]
 
 jobs:
   coder_cli:
-    runs-on: macos-latest
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v1
       - run: brew install --build-from-source ./coder.rb 
