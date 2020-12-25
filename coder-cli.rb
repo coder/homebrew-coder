@@ -1,4 +1,4 @@
-class Coder < Formula
+class CoderCli < Formula
   desc "Command-line tool for the Coder remote development platform"
   homepage "https://github.com/cdr/coder-cli"
   version "1.14.2"

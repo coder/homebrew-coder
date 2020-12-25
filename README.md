@@ -11,5 +11,5 @@ brew tap cdr/coder
 ### Install the [Coder CLI](https://github.com/cdr/coder-cli)
 
 ```text
-brew install coder
+brew install coder-cli
 ```

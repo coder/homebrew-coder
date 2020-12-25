@@ -9,6 +9,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v1
-      - run: brew install --build-from-source ./coder.rb 
+      - run: brew install --build-from-source ./coder-cli.rb 
       - run: coder --version
 
