@@ -16,10 +16,6 @@ macos_url="https://github.com/cdr/coder-cli/releases/download/v$version/coder-cl
 
 linux_sha="$(curl -sL "$linux_url" | sha)"
 macos_sha="$(curl -sL "$macos_url" | sha)"
-
-echo $macos_sha
-echo $linux_sha
-
 template=$(cat ./ci/templates/coder-cli.rb)
 
 template="${template//\{\{MACOS_SHA\}\}/$macos_sha}"
