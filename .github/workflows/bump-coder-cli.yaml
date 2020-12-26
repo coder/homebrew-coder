@@ -19,7 +19,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-            ./ci/scripts/bump-coder-cli.sh ${{ github.event.inputs.version }}
+            ./ci/scripts/gen-coder-cli-formula.sh ${{ github.event.inputs.version }}
             git diff
             git checkout -b bump-coder-cli-${{ github.event.inputs.version }}
             git add coder-cli.rb
