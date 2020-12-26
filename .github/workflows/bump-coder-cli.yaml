@@ -1,22 +1,23 @@
 name: bump_version
 on:
-  workflow_dispatch:
-    inputs:
-      version: 
-        default: ""
-        required: true
-        description: "unprefixed version number (ex: '1.14.2')"
+  push
+  # workflow_dispatch:
+  #   inputs:
+  #     version: 
+  #       default: ""
+  #       required: true
+  #       description: "unprefixed version number (ex: '1.14.2')"
 jobs:
   bump:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - run: |
-          ./ci/scripts/bump-coder-cli.sh ${{ github.event.inputs.version }}
+          ./ci/scripts/bump-coder-cli.sh 1.14.1
           git diff
-          git checkout -b bump-coder-cli-${{ github.event.inputs.version }}
+          git checkout -b bump-coder-cli-1.14.1
           git add coder-cli.rb
           git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
           git commit -m "feat: bump coder-cli version to v$version"
-          git push --set-upstream origin bump-coder-cli-${{ github.event.inputs.version }}
+          git push --set-upstream origin bump-coder-cli-1.14.1
           gh pr create --fill --reviewer cmoog
