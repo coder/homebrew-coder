@@ -1,32 +1,31 @@
 name: bump_version
 on:
-  push
-  # workflow_dispatch:
-  #   inputs:
-  #     version: 
-  #       default: ""
-  #       required: true
-  #       description: "unprefixed version number (ex: '1.14.2')"
+  workflow_dispatch:
+    inputs:
+      version: 
+        default: ""
+        required: true
+        description: "unprefixed version number (ex: '1.14.2')"
 jobs:
-  bump:
+  coder-cli:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Configure git
         run: |
-          git config --global user.email "bot@coder.com"
-          git config --global user.name "Coder Bot"
+          git config user.name github-actions
+          git config user.email github-actions@github.com
       - name: Open PR to bump coder-cli version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-            ./ci/scripts/bump-coder-cli.sh 1.14.1
+            ./ci/scripts/bump-coder-cli.sh ${{ github.event.inputs.version }}
             git diff
-            git checkout -b bump-coder-cli-1.14.1
+            git checkout -b bump-coder-cli-${{ github.event.inputs.version }}
             git add coder-cli.rb
-            git commit -m "feat: bump coder-cli version to v1.14.1"
-            git push --set-upstream origin bump-coder-cli-1.14.1
+            git commit -m "feat: bump coder-cli version to v${{ github.event.inputs.version }}"
+            git push --set-upstream origin bump-coder-cli-${{ github.event.inputs.version }}
             gh pr create \
-              --title="bump coder-cli version to v1.14.1" \
+              --title="bump coder-cli version to v${{ github.event.inputs.version }}" \
               --body="" \
               --reviewer cmoog
