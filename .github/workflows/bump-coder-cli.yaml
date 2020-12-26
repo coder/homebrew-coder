@@ -17,7 +17,6 @@ jobs:
           git diff
           git checkout -b bump-coder-cli-1.14.1
           git add coder-cli.rb
-          git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
           git commit -m "feat: bump coder-cli version to v$version"
           git push --set-upstream origin bump-coder-cli-1.14.1
           gh pr create --fill --reviewer cmoog
