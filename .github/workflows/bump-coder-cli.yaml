@@ -19,3 +19,4 @@ jobs:
           git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
           git commit -m "feat: bump coder-cli version to v$version"
           git push --set-upstream origin bump-coder-cli-${{ github.event.inputs.version }}
+          gh pr create --fill --reviewer cmoog
