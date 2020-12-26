@@ -16,11 +16,14 @@ jobs:
         run: |
           git config --global user.email "bot@coder.com"
           git config --global user.name "Coder Bot"
-      - run: |
-          ./ci/scripts/bump-coder-cli.sh 1.14.1
-          git diff
-          git checkout -b bump-coder-cli-1.14.1
-          git add coder-cli.rb
-          git commit -m "feat: bump coder-cli version to v1.14.1"
-          git push --set-upstream origin bump-coder-cli-1.14.1
-          gh pr create --fill --reviewer cmoog
+      - name: Open PR to bump coder-cli version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+            ./ci/scripts/bump-coder-cli.sh 1.14.1
+            git diff
+            git checkout -b bump-coder-cli-1.14.1
+            git add coder-cli.rb
+            git commit -m "feat: bump coder-cli version to v1.14.1"
+            git push --set-upstream origin bump-coder-cli-1.14.1
+            gh pr create --fill --reviewer cmoog
