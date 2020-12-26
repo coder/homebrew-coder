@@ -26,4 +26,7 @@ jobs:
             git add coder-cli.rb
             git commit -m "feat: bump coder-cli version to v1.14.1"
             git push --set-upstream origin bump-coder-cli-1.14.1
-            gh pr create --title="bump coder-cli version to v1.14.1" --reviewer cmoog
+            gh pr create \
+              --title="bump coder-cli version to v1.14.1" \
+              --body="" \
+              --reviewer cmoog
