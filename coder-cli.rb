@@ -5,11 +5,11 @@ class CoderCli < Formula
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/cdr/coder-cli/releases/download/v1.14.2%2Bc1.1/coder-cli-darwin-amd64.zip"
-    sha256 "41e475a2b228f5d646c488d537093eb444b235088e0e4c3f70ef47b5db0cb81d"
+    url "https://github.com/cdr/coder-cli/releases/download/v1.14.2%2Bcli.1/coder-cli-darwin-amd64.zip"
+    sha256 "f92a067dea9f1ae5c219406ddb01aca65e68d6087ac84594729726134ffe6d62"
   else
-    url "https://github.com/cdr/coder-cli/releases/download/v1.14.2%2Bc1.1/coder-cli-linux-amd64.tar.gz"
-    sha256 "b0b99aa3872ef4b5e79187c8e9095e8c262766ee9b18f84790a0f5d5cfc78142"
+    url "https://github.com/cdr/coder-cli/releases/download/v1.14.2%2Bcli.1/coder-cli-linux-amd64.tar.gz"
+    sha256 "038ebbb4e338c2b308857691a1e6119a2419b68abfa9f95f9787db886703e0bc"
   end
 
   def install
