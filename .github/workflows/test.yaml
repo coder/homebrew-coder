@@ -11,4 +11,12 @@ jobs:
       - uses: actions/checkout@v1
       - run: brew install --build-from-source ./coder-cli.rb 
       - run: coder --version
-
+  coder_cli_nightly:
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v1
+      - run: brew install --build-from-source ./coder-cli-nightly.rb
+      - run: coder --version
