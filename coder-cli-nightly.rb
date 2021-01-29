@@ -1,4 +1,4 @@
-class CoderCli < Formula
+class CoderCliNightly < Formula
   desc "Command-line tool for the Coder remote development platform, nightly release channel"
   homepage "https://github.com/cdr/coder-cli"
   version "1.16.0-rc.0"
