@@ -1,7 +1,7 @@
 class CoderCli < Formula
   desc "Command-line tool for the Coder remote development platform"
   homepage "https://github.com/cdr/coder-cli"
-  version "1.18.1"
+  version "1.19.0"
   bottle :unneeded
 
   if OS.mac?
