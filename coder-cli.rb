@@ -1,15 +1,15 @@
 class CoderCli < Formula
   desc "Command-line tool for the Coder remote development platform"
   homepage "https://github.com/cdr/coder-cli"
-  version "1.18.1"
+  version "1.19.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/cdr/coder-cli/releases/download/v1.18.1/coder-cli-darwin-amd64.zip"
-    sha256 "ab682b4138a0f6f0dcf20fa7044e0f89ff54c9a861503e158288ddd87e8b4dbf"
+    url "https://github.com/cdr/coder-cli/releases/download/v1.19.0/coder-cli-darwin-amd64.zip"
+    sha256 "a24ea0db0c16d1b1b1a91e38ccd1792092633214b3c5094de1b4d5829d14c893"
   else
-    url "https://github.com/cdr/coder-cli/releases/download/v1.18.1/coder-cli-linux-amd64.tar.gz"
-    sha256 "04046d90fe9f0d3f549e17e67bec65913df70ee8766cc81174293bf53759e66d"
+    url "https://github.com/cdr/coder-cli/releases/download/v1.19.0/coder-cli-linux-amd64.tar.gz"
+    sha256 "294302d9a76175d0c037000be10648f50c8bf8e51d2723a580642a61bc2abdc3"
   end
 
   def install
