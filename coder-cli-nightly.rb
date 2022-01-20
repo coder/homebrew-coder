@@ -1,7 +1,7 @@
 class CoderCliNightly < Formula
   desc "Command-line tool for the Coder remote development platform, nightly release channel"
   homepage "https://github.com/cdr/coder-cli"
-  version "1.26.0"
+  version "1.27.0"
 
   if OS.mac?
     url "https://github.com/cdr/coder-cli/releases/download/v1.27.0/coder-cli-darwin-amd64.zip"
