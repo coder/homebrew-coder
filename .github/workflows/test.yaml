@@ -10,7 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: |
-          [[ "$(uname -s)" == "Linux" ]] && echo "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" >> $GITHUB_PATH
+          if [[ "$(uname -s)" == "Linux" ]]
+          then
+            echo "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" >> $GITHUB_PATH
+          fi
       - run: brew install --build-from-source ./coder-cli.rb 
       - run: coder --version
   coder_cli_nightly:
@@ -21,6 +24,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: |
-          [[ "$(uname -s)" == "Linux" ]] && echo "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" >> $GITHUB_PATH
+          if [[ "$(uname -s)" == "Linux" ]]
+          then
+            echo "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" >> $GITHUB_PATH
+          fi
       - run: brew install --build-from-source ./coder-cli-nightly.rb
       - run: coder --version
