@@ -9,6 +9,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v1
+      - run: |
+          [[ "$(uname -s)" == "Linux"]] && echo "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" >> $GITHUB_PATH
       - run: brew install --build-from-source ./coder-cli.rb 
       - run: coder --version
   coder_cli_nightly:
@@ -18,5 +20,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v1
+      - run: |
+          [[ "$(uname -s)" == "Linux"]] && echo "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" >> $GITHUB_PATH
       - run: brew install --build-from-source ./coder-cli-nightly.rb
       - run: coder --version
