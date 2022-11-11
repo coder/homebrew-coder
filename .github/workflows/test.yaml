@@ -2,6 +2,20 @@ name: test
 on: [push]
 
 jobs:
+  coder:
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v1
+      - run: |
+          if [[ "$(uname -s)" == "Linux" ]]
+          then
+            echo "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" >> $GITHUB_PATH
+          fi
+      - run: brew install --build-from-source ./coder.rb 
+      - run: coder version
   coder_cli:
     strategy:
       matrix:
