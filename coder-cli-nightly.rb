@@ -1,14 +1,14 @@
 class CoderCliNightly < Formula
   desc "Command-line tool for the Coder remote development platform, nightly release channel"
   homepage "https://github.com/cdr/coder-cli"
-  version "1.43.1"
+  version "1.44.0"
 
   if OS.mac?
-    url "https://github.com/cdr/coder-cli/releases/download/v1.43.1/coder-cli-darwin-amd64.zip"
-    sha256 "0861bfc89e8625ea11707633f4762cfed6422372199c838ad6d13cf13de11d30"
+    url "https://github.com/cdr/coder-cli/releases/download/v1.44.0/coder-cli-darwin-amd64.zip"
+    sha256 "f3fe13cec4d0615a40134675279d4cd1a5a871356d90dedef020981622f1b693"
   else
-    url "https://github.com/cdr/coder-cli/releases/download/v1.43.1/coder-cli-linux-amd64.tar.gz"
-    sha256 "a13fac9a0ad4fc3a5fa79dfc95bdb191c2745d9b155fdf7845834ea48109aa99"
+    url "https://github.com/cdr/coder-cli/releases/download/v1.44.0/coder-cli-linux-amd64.tar.gz"
+    sha256 "642320e709a8585ae732e3b31d5945a09cd2a7d63121d7121c34ebc5740d3fc9"
   end
 
   def install
