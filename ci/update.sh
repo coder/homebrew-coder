@@ -12,17 +12,17 @@ darwin_sha="$(echo "$2" | tr "[:upper:]" "[:lower:]")"
 linux_sha="$(echo "$3" | tr "[:upper:]" "[:lower:]")"
 
 # Get the old version to use in our find/replace.
-old_version="$(sed -n "s/.*version \"\(.*\)\".*/\1/p" ../coder-cli.rb)"
+old_version="$(sed -n "s/.*version \"\(.*\)\".*/\1/p" "../coder@1.rb")"
 if [[ "$old_version" == "" ]]; then
   echo "Could not determine the old version of the formula..." >&2
   exit 1
 fi
 
 # Replace version
-sed -i "s/${old_version//./\.}/${version//./\.}/g" ../coder-cli{,-nightly}.rb
+sed -i '' "s/${old_version//./\.}/${version//./\.}/g" "../coder@1.rb"
 
-# Darwin amd64 SHA256. This only selects the first match
-sed -zi "s/sha256 \"[a-f0-9]*\"/sha256 \"$darwin_sha\"/1" ../coder-cli{,-nightly}.rb
+# Update macOS hash
+sed -i '' "s/sha256 \"[a-f0-9]*\" # mac/sha256 \"$darwin_sha\" # mac/" "../coder@1.rb"
 
-# Linux amd64 SHA256. This only selects the second match
-sed -zi "s/sha256 \"[a-f0-9]*\"/sha256 \"$linux_sha\"/2" ../coder-cli{,-nightly}.rb
+# Update Linux hash
+sed -i '' "s/sha256 \"[a-f0-9]*\" # linux/sha256 \"$linux_sha\" # linux/" "../coder@1.rb"
