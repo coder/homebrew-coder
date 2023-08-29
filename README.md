@@ -1,15 +1,19 @@
 # Coder Homebrew Tap
 
-A Homebrew Tap for Coder related utilities and applications.
+Provides official formulae for [Coder] products
 
 ## Usage
 
-```text
-brew tap coder/coder
+#### Install [Coder]
+
+```sh
+brew install coder/coder/coder
 ```
 
-### Install the [Coder CLI](https://github.com/cdr/coder-cli)
+#### Install Coder v1 (legacy)
 
-```text
-brew install coder-cli
+```sh
+brew install coder/coder/coder@v1
 ```
+
+[coder]: https://github.com/coder/coder
