@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# Updates both the coder-cli and coder-cli-nightly formulae to have the given
-# values.
+# Updates the coder formula
 # ./update.sh "<version>" "<darwin-arm64-zip-SHA256>" "<darwin-amd64-zip-SHA256>" "<linux-amd64-targz-SHA256>"
 
 set -euo pipefail
