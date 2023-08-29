@@ -5,20 +5,21 @@ class Coder < Formula
 
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/coder/coder/releases/download/v2.1.4/coder_2.1.4_darwin_arm64.zip"
+      url "https://github.com/coder/coder/releases/download/v#{version}/coder_#{version}_darwin_arm64.zip"
       sha256 "ac67c032e81fed7ef3b2e1fc5bfafb878e7551c081d0a136f5a88583c279c060"
     else
-      url "https://github.com/coder/coder/releases/download/v2.1.4/coder_2.1.4_darwin_amd64.zip"
+      url "https://github.com/coder/coder/releases/download/v#{version}/coder_#{version}_darwin_amd64.zip"
       sha256 "693d6c450891627d879123ea9a08dc5917dafee7de6c639c5c9b496abe6f250b"
     end
   else
-    url "https://github.com/coder/coder/releases/download/v2.1.4/coder_2.1.4_linux_amd64.tar.gz"
+    url "https://github.com/coder/coder/releases/download/v#{version}/coder_#{version}_linux_amd64.tar.gz"
     sha256 "41666bbe3afacd153fbe6c1a2d908bb4fb7a88e821205cb7136a0bad2d1cd6dc"
   end
 
   def install
     bin.install "coder"
   end
+
   test do
     version_output = shell_output("#{bin}/coder version")
     assert_match version.to_s, version_output
