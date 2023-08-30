@@ -1,7 +1,7 @@
 class Coder < Formula
   desc "Provisions remote development environments via Terraform"
   homepage "https://github.com/coder/coder"
-  version "2.1.4"
+  version "2.1.3"
 
   if OS.mac?
     if Hardware::CPU.arm?
