@@ -13,7 +13,7 @@ brew install coder/coder/coder
 #### Install Coder v1 (legacy)
 
 ```sh
-brew install coder/coder/coder@v1
+brew install coder/coder/coder@1
 ```
 
 [coder]: https://github.com/coder/coder
