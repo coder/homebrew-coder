@@ -1,14 +1,14 @@
 class CoderAT1 < Formula
   desc "Command-line tool for the Coder remote development platform"
   homepage "https://github.com/coder/coder-v1-cli"
-  version "1.44.0"
+  version "1.44.1"
 
   if OS.mac?
     url "https://github.com/coder/coder-v1-cli/releases/download/v#{version}/coder-cli-darwin-amd64.zip"
-    sha256 "f3fe13cec4d0615a40134675279d4cd1a5a871356d90dedef020981622f1b693"
+    sha256 "3975294c3063316353fa368d9b066a9ec419b055663d4e8ab9c2d1bb7612698d"
   else
     url "https://github.com/coder/coder-v1-cli/releases/download/v#{version}/coder-cli-linux-amd64.tar.gz"
-    sha256 "642320e709a8585ae732e3b31d5945a09cd2a7d63121d7121c34ebc5740d3fc9"
+    sha256 "18dbe03aaab24c714a7c63de60273ed5472bdf4559e82fd36c0b6e277790a042"
   end
 
   keg_only :versioned_formula
