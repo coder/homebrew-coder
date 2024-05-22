@@ -1,19 +1,19 @@
 class Coder < Formula
   desc "Provisions remote development environments via Terraform"
   homepage "https://github.com/coder/coder"
-  version "2.11.2"
+  version "2.10.3"
 
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/coder/coder/releases/download/v#{version}/coder_#{version}_darwin_arm64.zip"
-      sha256 "a0cf9d11460d51c6077a60d66017f99aa528dda1d712ee8b52e2ce6e819f4eb4"
+      sha256 "c7559feadc993d4a35cb621d2f5e6ff128d88185ae888d302fde288bd51a93ac"
     else
       url "https://github.com/coder/coder/releases/download/v#{version}/coder_#{version}_darwin_amd64.zip"
-      sha256 "0147db7493412b67c227a3eae20907e3ecbfba776ee8dc7ae3071e8d5001ee25"
+      sha256 "fd9f273aa785cc17dab860c666dac185e49b49086d588dc7b84dfaa3470f2786"
     end
   else
     url "https://github.com/coder/coder/releases/download/v#{version}/coder_#{version}_linux_amd64.tar.gz"
-    sha256 "92f40fad818391fcd339bddcf5fdd535d837a25b4a9a6d59e295de1c9f4b232a"
+    sha256 "163bc6189aa8d7f2ec919e91b5e684daaf96e8ad738bc9a98400fe4f3629e8ae"
   end
 
   def install
