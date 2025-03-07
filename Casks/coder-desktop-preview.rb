@@ -1,5 +1,5 @@
 cask "coder-desktop-preview" do
-  version "0.1.0-26-g75f015c"
+  version "0.1.0-27-ge18f466"
   sha256 :no_check
 
   url "https://github.com/coder/coder-desktop-macos/releases/download/preview/CoderDesktop.pkg"
