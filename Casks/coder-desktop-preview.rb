@@ -1,8 +1,8 @@
 cask "coder-desktop-preview" do
-  version "0.1.0-22-g2dee620"
+  version "0.1.0-26-g75f015c"
   sha256 :no_check
 
-  url "https://github.com/coder/coder-desktop-macos/releases/download/preview/Coder.Desktop.dmg"
+  url "https://github.com/coder/coder-desktop-macos/releases/download/preview/CoderDesktop.pkg"
   name "Coder Desktop"
   desc "Coder Desktop client"
   homepage "https://github.com/coder/coder-desktop-macos"
@@ -10,7 +10,7 @@ cask "coder-desktop-preview" do
   conflicts_with cask: "coder/coder/coder-desktop"
   depends_on macos: ">= :sonoma"
 
-  app "Coder Desktop.app"
+  pkg "CoderDesktop.pkg"
 
   uninstall quit:       [
               "com.coder.Coder-Desktop",
