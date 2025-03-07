@@ -1,10 +1,10 @@
 cask "coder-desktop-preview" do
-  version "0.1.0-27-ge18f466"
+  version "0.2.0-1-gb7ccbca"
   sha256 :no_check
 
   url "https://github.com/coder/coder-desktop-macos/releases/download/preview/CoderDesktop.pkg"
   name "Coder Desktop"
-  desc "Coder Desktop client"
+  desc "Native desktop client for Coder"
   homepage "https://github.com/coder/coder-desktop-macos"
 
   conflicts_with cask: "coder/coder/coder-desktop"
