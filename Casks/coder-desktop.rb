@@ -4,7 +4,7 @@ cask "coder-desktop" do
 
   url "https://github.com/coder/coder-desktop-macos/releases/download/v#{version}/CoderDesktop.pkg"
   name "Coder Desktop"
-  desc "Coder Desktop client"
+  desc "Native desktop client for Coder"
   homepage "https://github.com/coder/coder-desktop-macos"
 
   conflicts_with cask: "coder/coder/coder-desktop-preview"
