@@ -12,7 +12,6 @@ cask "coder-desktop-preview" do
   conflicts_with cask: "coder/coder/coder-desktop"
   depends_on macos: ">= :sonoma"
 
-
   pkg "Coder-Desktop.pkg"
 
   uninstall quit:       [
