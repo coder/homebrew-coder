@@ -9,6 +9,7 @@ cask "coder-desktop-preview" do
 
   conflicts_with cask: "coder/coder/coder-desktop"
   depends_on macos: ">= :sonoma"
+
   deprecated! date: "2025-06-02", because: "preview builds should now be installed via the built-in update mechanism"
 
   pkg "Coder-Desktop.pkg"
