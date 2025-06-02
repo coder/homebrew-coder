@@ -1,5 +1,5 @@
 cask "coder-desktop-preview" do
-  version "0.5.1.2"
+  version "0.5.1.5"
   sha256 :no_check
 
   url "https://github.com/coder/coder-desktop-macos/releases/download/preview/Coder-Desktop.pkg"
@@ -9,6 +9,7 @@ cask "coder-desktop-preview" do
 
   conflicts_with cask: "coder/coder/coder-desktop"
   depends_on macos: ">= :sonoma"
+  deprecated! date: "2025-06-02", because: "preview builds should now be installed via the built-in update mechanism"
 
   pkg "Coder-Desktop.pkg"
 
