@@ -7,7 +7,12 @@ cask "coder-desktop-preview" do
   desc "Native desktop client for Coder"
   homepage "https://github.com/coder/coder-desktop-macos"
 
-  deprecate! date: "2025-06-02", because: "preview builds should now be installed via the built-in update mechanism. We recommend uninstalling this cask, installing the non-preview version, and then switching to the 'preview' channel in the app settings."
+  deprecate! date: "2025-06-02",
+             because: <<~REASON
+               preview builds should now be installed via the built-in update mechanism.
+               We recommend uninstalling this cask, installing the non-preview version,
+               and then switching to the 'preview' channel in the app settings.
+             REASON
 
   conflicts_with cask: "coder/coder/coder-desktop"
   depends_on macos: ">= :sonoma"
