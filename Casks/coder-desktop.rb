@@ -1,13 +1,13 @@
 cask "coder-desktop" do
-  version "0.5.1"
-  sha256 "49d511c4466ef3e8b81fddbac9a2c08d3980f11b395e0eae6e28ce252ecc6769"
+  version "0.6.0"
+  sha256 "3bcbdc3792610e83c67e4dabd8c7b158fe71e8ac0be2aea6b095d20a34f823ea"
 
   url "https://github.com/coder/coder-desktop-macos/releases/download/v#{version}/Coder-Desktop.pkg"
   name "Coder Desktop"
   desc "Native desktop client for Coder"
   homepage "https://github.com/coder/coder-desktop-macos"
+  auto_updates true
 
-  conflicts_with cask: "coder/coder/coder-desktop-preview"
   depends_on macos: ">= :sonoma"
 
   pkg "Coder-Desktop.pkg"
