@@ -1,6 +1,6 @@
 cask "coder-desktop" do
-  version "0.7.2"
-  sha256 "bc71704fa50328d971c6f4a2ab459cfe221adea608ce01b40ec73e4e83492bea"
+  version "0.8.0"
+  sha256 "e683fe7dcd3abb6485a6ebb0668a0fd72ed04efb0d11163cc22b5f3eab85ff88"
 
   url "https://github.com/coder/coder-desktop-macos/releases/download/v#{version}/Coder-Desktop.pkg"
   name "Coder Desktop"
@@ -14,11 +14,16 @@ cask "coder-desktop" do
 
   uninstall quit:       [
               "com.coder.Coder-Desktop",
+              "com.coder.Coder-Desktop.Helper",
               "com.coder.Coder-Desktop.VPN",
             ],
             login_item: "Coder Desktop"
 
-  zap delete: "/var/root/Library/Containers/com.Coder-Desktop.VPN/Data/Documents/coder-vpn.dylib",
+  zap delete: [
+        "/var/root/Library/Application Support/com.coder.Coder-Desktop/coder-darwin-arm64",
+        "/var/root/Library/Application Support/com.coder.Coder-Desktop/coder-darwin_amd64",
+        "/var/root/Library/Containers/com.Coder-Desktop.VPN/Data/Documents/coder-vpn.dylib",
+      ],
       trash:  [
         "~/Library/Caches/com.coder.Coder-Desktop",
         "~/Library/HTTPStorages/com.coder.Coder-Desktop",
