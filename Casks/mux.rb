@@ -14,6 +14,7 @@ cask "mux" do
   homepage "https://mux.coder.com/"
 
   auto_updates true
+  depends_on macos: ">= :monterey"
 
   app "mux.app"
 
