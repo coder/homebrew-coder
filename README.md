@@ -10,6 +10,12 @@ Provides official formulae for [Coder] products
 brew install coder/coder/coder
 ```
 
+#### Install Mux
+
+```sh
+brew install --cask coder/coder/mux
+```
+
 #### Install Coder v1 (legacy)
 
 ```sh

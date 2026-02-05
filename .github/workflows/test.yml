@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-22.04, macos-13]
+        os: [ubuntu-22.04, macos-15-intel]
 
     runs-on: ${{ matrix.os }}
 
@@ -41,6 +41,9 @@ jobs:
       - run: brew test-bot --only-setup
 
       - run: brew test-bot --only-tap-syntax
+
+      - run: brew audit --cask --strict --online coder/coder/mux
+        if: runner.os == 'macOS' && github.event_name == 'pull_request'
 
       - run: brew test-bot --only-formulae
         if: github.event_name == 'pull_request'
