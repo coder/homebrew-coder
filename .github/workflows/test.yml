@@ -42,5 +42,8 @@ jobs:
 
       - run: brew test-bot --only-tap-syntax
 
+      - run: brew audit --cask --strict --online --tap coder/coder mux
+        if: runner.os == 'macOS' && github.event_name == 'pull_request'
+
       - run: brew test-bot --only-formulae
         if: github.event_name == 'pull_request'
