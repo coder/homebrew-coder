@@ -15,7 +15,7 @@ cask "coder-desktop-preview" do
              REASON
 
   conflicts_with cask: "coder/coder/coder-desktop"
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   pkg "Coder-Desktop.pkg"
 
