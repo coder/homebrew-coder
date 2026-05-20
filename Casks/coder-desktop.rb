@@ -1,6 +1,6 @@
 cask "coder-desktop" do
-  version "0.8.0"
-  sha256 "e683fe7dcd3abb6485a6ebb0668a0fd72ed04efb0d11163cc22b5f3eab85ff88"
+  version "0.8.1"
+  sha256 "b4187930ff59a4a7eee65cf79fbc2cadc6b94e3d6eea505a740cd27880d23c57"
 
   url "https://github.com/coder/coder-desktop-macos/releases/download/v#{version}/Coder-Desktop.pkg"
   name "Coder Desktop"
@@ -8,7 +8,7 @@ cask "coder-desktop" do
   homepage "https://github.com/coder/coder-desktop-macos"
 
   auto_updates true
-  depends_on macos: :sonoma
+  depends_on macos: ">= :sonoma"
 
   pkg "Coder-Desktop.pkg"
 
@@ -21,7 +21,7 @@ cask "coder-desktop" do
 
   zap delete: [
         "/var/root/Library/Application Support/com.coder.Coder-Desktop/coder-darwin-arm64",
-        "/var/root/Library/Application Support/com.coder.Coder-Desktop/coder-darwin_amd64",
+        "/var/root/Library/Application Support/com.coder.Coder-Desktop/coder-darwin-amd64",
         "/var/root/Library/Containers/com.Coder-Desktop.VPN/Data/Documents/coder-vpn.dylib",
       ],
       trash:  [
