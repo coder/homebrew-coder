@@ -8,7 +8,7 @@ cask "coder-desktop" do
   homepage "https://github.com/coder/coder-desktop-macos"
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   pkg "Coder-Desktop.pkg"
 
@@ -20,8 +20,8 @@ cask "coder-desktop" do
             login_item: "Coder Desktop"
 
   zap delete: [
-        "/var/root/Library/Application Support/com.coder.Coder-Desktop/coder-darwin-arm64",
         "/var/root/Library/Application Support/com.coder.Coder-Desktop/coder-darwin-amd64",
+        "/var/root/Library/Application Support/com.coder.Coder-Desktop/coder-darwin-arm64",
         "/var/root/Library/Containers/com.Coder-Desktop.VPN/Data/Documents/coder-vpn.dylib",
       ],
       trash:  [
