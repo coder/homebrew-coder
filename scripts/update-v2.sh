@@ -15,7 +15,9 @@ linux_sha="$(echo "$4" | tr "[:upper:]" "[:lower:]")"
 sed -Ei "s#(releases/download/v)[0-9.]+/coder_[0-9.]+_#\1${version}/coder_${version}_#g" "../Formula/coder.rb"
 
 # Fail loudly if any of the 3 URLs was not updated
-if [ "$(grep -cF "releases/download/v${version}/coder_${version}_" "../Formula/coder.rb")" -ne 3 ]; then
+url_count="$(grep -cF "releases/download/v${version}/coder_${version}_" "../Formula/coder.rb")"
+if [[ "${url_count}" -ne 3 ]]
+then
   echo "Expected 3 download URLs for ${version} in Formula/coder.rb" >&2
   exit 1
 fi
