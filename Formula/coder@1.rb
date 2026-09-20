@@ -12,6 +12,8 @@ class CoderAT1 < Formula
 
   keg_only :versioned_formula
 
+  depends_on arch: :x86_64
+
   def version_suffix
     version.major.to_s
   end
