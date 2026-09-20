@@ -95,7 +95,7 @@ Typical changes are version bumps (updating `version`, `url`, and `sha256`) and 
 
 ## Version bumps (formulae)
 
-- Keep the `version` value and the `url` templates in sync.
+- There is no `version` stanza; Homebrew scans the version from the download URLs. A bump rewrites the version in every `url` line, and `scripts/update-v2.sh` fails if it does not end up with all three.
 - For `Formula/coder.rb`, there are **three** `sha256` entries (macOS arm64, macOS amd64, Linux amd64).
   - `scripts/update-v2.sh` replaces the **1st/2nd/3rd** `sha256` occurrence; avoid reordering or inserting extra `sha256` lines without updating `scripts/update-v2.sh`.
 - Prefer **deterministic** `test do` blocks (fast, no external state). If tests must fail, use `shell_output(cmd, expected_exit_code)` like `Formula/coder.rb`.
