@@ -10,10 +10,4 @@ Provides official formulae for [Coder] products
 brew install coder/coder/coder
 ```
 
-#### Install Coder v1 (legacy)
-
-```sh
-brew install coder/coder/coder@1
-```
-
 [coder]: https://github.com/coder/coder

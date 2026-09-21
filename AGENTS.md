@@ -22,12 +22,9 @@ Typical changes are version bumps (updating `version`, `url`, and `sha256`) and 
 ## Key files
 
 - `Formula/coder.rb`: **Coder v2** CLI formula (macOS arm64/amd64 + Linux amd64).
-- `Formula/coder@1.rb`: **Coder v1** (legacy) CLI formula (`keg_only :versioned_formula`).
 - `Casks/coder-desktop.rb`: Coder Desktop (versioned pkg + pinned `sha256`).
 - `Casks/coder-desktop-preview.rb`: Deprecated preview cask (`sha256 :no_check`).
-- `formula_renames.json`: Maps historical formula names to current ones.
 - `scripts/update-v2.sh`: Updates `Formula/coder.rb` for a new v2 release.
-- `scripts/update-v1.sh`: Updates `Formula/coder@1.rb` for a new v1 release.
 
 # Essential commands
 
@@ -78,16 +75,11 @@ Typical changes are version bumps (updating `version`, `url`, and `sha256`) and 
 
 ## Release/update helpers
 
-> Note: `scripts/update-*.sh` use GNU `sed` flags (`-z` and `-i` without a backup extension). They’re expected to run in a GNU `sed` environment (e.g., Linux). If you’re on macOS with BSD `sed`, run them in a Linux container or adjust the commands.
+> Note: `scripts/update-v2.sh` uses GNU `sed` flags (`-z` and `-i` without a backup extension). It’s expected to run in a GNU `sed` environment (e.g., Linux). If you’re on macOS with BSD `sed`, run them in a Linux container or adjust the commands.
 
 - Update **Coder v2** formula (`Formula/coder.rb`):
   ```sh
   ./scripts/update-v2.sh "<version>" "<darwin-arm64-sha256>" "<darwin-amd64-sha256>" "<linux-amd64-sha256>"
-  ```
-
-- Update **Coder v1** formula (`Formula/coder@1.rb`):
-  ```sh
-  ./scripts/update-v1.sh "<version>" "<darwin-amd64-sha256>" "<linux-amd64-sha256>"
   ```
 
 - Computing SHA256 for downloaded artifacts:
@@ -103,9 +95,9 @@ Typical changes are version bumps (updating `version`, `url`, and `sha256`) and 
 
 ## Version bumps (formulae)
 
-- Keep the `version` value and the `url` templates in sync.
+- There is no `version` stanza; Homebrew scans the version from the download URLs. A bump rewrites the version in every `url` line, and `scripts/update-v2.sh` fails if it does not end up with all three.
 - For `Formula/coder.rb`, there are **three** `sha256` entries (macOS arm64, macOS amd64, Linux amd64).
-  - The update scripts replace the **1st/2nd/3rd** `sha256` occurrence; avoid reordering or inserting extra `sha256` lines without updating `scripts/update-v2.sh`.
+  - `scripts/update-v2.sh` replaces the **1st/2nd/3rd** `sha256` occurrence; avoid reordering or inserting extra `sha256` lines without updating `scripts/update-v2.sh`.
 - Prefer **deterministic** `test do` blocks (fast, no external state). If tests must fail, use `shell_output(cmd, expected_exit_code)` like `Formula/coder.rb`.
 
 ## Version bumps (casks)
@@ -115,7 +107,7 @@ Typical changes are version bumps (updating `version`, `url`, and `sha256`) and 
 
 # Anti-patterns
 
-- Don’t reorder `sha256` lines in formulae if you still rely on `scripts/update-*.sh` (they patch by “nth match”).
+- Don’t reorder `sha256` lines in formulae if you still rely on `scripts/update-v2.sh` (it patches by “nth match”).
 - Don’t add network-dependent tests or long-running integration tests to formulae; Homebrew formula tests should be quick and reproducible.
 
 # Commit and Pull Request Guidelines
@@ -136,7 +128,6 @@ Typical changes are version bumps (updating `version`, `url`, and `sha256`) and 
 Recent history uses concise, release-oriented subjects. Prefer:
 
 - `coder <version>` for `Formula/coder.rb` bumps (example: `coder 2.30.0`).
-- `coder@1 <version>` or similar for v1 bumps.
 - `Coder Desktop v<version>` for cask releases.
 
 ## Pull requests
