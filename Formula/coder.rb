@@ -4,15 +4,15 @@ class Coder < Formula
 
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/coder/coder/releases/download/v2.37.2/coder_2.37.2_darwin_arm64.zip"
-      sha256 "20d14f83ac14bb83bf0abf94f68ff4e7d6dfaf88374186566c6d7b0d4f0a7899"
+      url "https://github.com/coder/coder/releases/download/v2.37.3/coder_2.37.3_darwin_arm64.zip"
+      sha256 "e3dcdfc405468c4ac53674a306ab2540261e1076d25cc1f359df9fcf791d230e"
     else
-      url "https://github.com/coder/coder/releases/download/v2.37.2/coder_2.37.2_darwin_amd64.zip"
-      sha256 "c040c6413e3fee67e4293c7c344d0cc3384b88426a69d6a62c5f6c01aeadc22f"
+      url "https://github.com/coder/coder/releases/download/v2.37.3/coder_2.37.3_darwin_amd64.zip"
+      sha256 "4fd6acdb59f1e2e7a60ff97e385b710f68dac63e4739238198f398597a1ea7e6"
     end
   else
-    url "https://github.com/coder/coder/releases/download/v2.37.2/coder_2.37.2_linux_amd64.tar.gz"
-    sha256 "81297a796938bd8c82000502be899a8a2611503976c0f550dfbadd1cc1f4eb36"
+    url "https://github.com/coder/coder/releases/download/v2.37.3/coder_2.37.3_linux_amd64.tar.gz"
+    sha256 "c941bef3b2656da89e9ea9b509884085b99b7d7a08620abd8484c50d77f41eed"
   end
 
   def install
