@@ -1,6 +1,6 @@
 cask "coder-desktop" do
-  version "0.8.4"
-  sha256 "06f7cc418938a2df9a9945c65ca4de9f3ce36670bc43265bc0875e3469b923c3"
+  version "0.8.5"
+  sha256 "0d000ba029d171fe1100868a41a87a3ee050fc50065120860ada60aab317d562"
 
   url "https://github.com/coder/coder-desktop-macos/releases/download/v#{version}/Coder-Desktop.pkg"
   name "Coder Desktop"
