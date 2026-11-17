@@ -6,7 +6,7 @@ This repository is the **official Homebrew tap** for Coder. It contains Homebrew
 
 - **Primary tech:** Homebrew Formula/Cask DSL (Ruby).
 - **Other tech:** Bash helper scripts under `scripts/`.
-- **CI:** GitHub Actions runs `brew test-bot` (see `.github/workflows/test.yml`).
+- **CI:** GitHub Actions runs `brew test-bot` (see `.github/workflows/ci.yaml`).
 
 Typical changes are version bumps (updating `version`, `url`, and `sha256`) and keeping tests/install stanzas aligned with Homebrew conventions.
 
